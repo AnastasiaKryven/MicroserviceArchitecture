@@ -30,12 +30,4 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Protos\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Protobuf Include="Protos\platforms.proto" GrpcServices="Client"></Protobuf>
-  </ItemGroup>
-
 </Project>
