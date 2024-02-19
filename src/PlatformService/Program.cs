@@ -21,9 +21,12 @@ namespace PlatformService
             }
             else
             {
-                Console.WriteLine("--> Using InMem DB!");
+                //Console.WriteLine("--> Using InMem DB!");
+                //builder.Services.AddDbContext<AppDbContext>(opt =>
+                //opt.UseInMemoryDatabase("InMem"));
+
                 builder.Services.AddDbContext<AppDbContext>(opt =>
-                opt.UseInMemoryDatabase("InMem"));
+                    opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
             }
 
             builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
